@@ -2,17 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: Supreme;
+    src: url(../components/ui/fonts/SupremeLL-Jumbo.otf);
+  }
+  @font-face {
+    font-family: SocialBook;
+    src: url(../components/ui/fonts/ABCSocial-Book.otf);
+  }
+  @font-face {
+    font-family: SocialBold;
+    src: url(../components/ui/fonts/ABCSocial-Bold.otf);
+  }
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  background-color: #1B6CFF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    background-color: #1B6CFF;
   }
 }
 
@@ -29,5 +39,46 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+.supreme {
+  font-family: Supreme, sans-serif;
+}
+.socialBook {
+  font-family: SocialBook, sans-serif;
+}
+.socialBold {
+  font-family: SocialBold, sans-serif;
+}
+.pulse {
+  border-radius: 50%;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pulse2 {
+  border-radius: 50%;
+  animation: pulse-animation2 1.9s infinite;
+}
+
+@keyframes pulse-animation2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }

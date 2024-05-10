@@ -15,7 +15,9 @@ const config: Config = {
       },
       colors: {
         "blue": "#1B6CFF",
-        "green": "#00DE60"
+        "green": "#00DE60",
+        "blueQuestions": "#3D82FF",
+        "greenQuestions": "#00DE60",
       },
     },
   },
