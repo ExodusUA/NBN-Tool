@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import bgFull from "../../images/homepage/bgFull.png";
 import bgPortrait from "../../images/homepage/bgPortrait.png";
-import Logo from "../../components/Logo";
+import Logo from "../../components/logo";
 import Link from "next/link";
 
 function page() {

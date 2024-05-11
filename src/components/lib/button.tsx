@@ -4,14 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/components/lib/utils";
 
 const buttonVariants = cva(
-  "text-xs font-semibold duration-300 inline-flex items-center justify-center gap-1 disabled:opacity-50", //це стилі по дефолту, які працюють для всіх варінтів
+  "text-[26px] font-semibold duration-300 inline-flex items-center justify-center gap-1 disabled:opacity-50 socialBook text-black w-[180px] h-[66px] rounded-[75px] cursor-pointer",
   {
     variants: {
       variant: {
-        white: "bg-white text-gray-900",
-        blue: "bg-blue text-white hover:bg-blue-600 active:bg-blue-400 disabled:bg-blue-300 disabled:text-blue-200 disabled:bg-white disabled:text-gray-400 shadow-md",
-        green: "bg-green text-black",
+        white: "bg-white text-gray-900 active:scale-95",
+        blue: "bg-blue  hover:bg-blue-600 active:bg-blue-400 disabled:bg-blue-300 disabled:text-blue-200 disabled:bg-btnCheck",
+        green: "bg-green text-black nextBtn active:scale-95",
       },
+
       size: {
         md: "py-2 px-4",
         lg: "py-4 px-6",
@@ -42,6 +43,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {props.children}
+        
       </Comp>
     );
   }

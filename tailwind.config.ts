@@ -8,6 +8,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'air': '1025px',
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -19,6 +22,7 @@ const config: Config = {
         "green": "#00DE60",
         "blueQuestions": "#3D82FF",
         "greenQuestions": "#00DE60",
+        "btnCheck": "#317AFF",
       },
     },
   },

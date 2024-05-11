@@ -7,15 +7,18 @@
     font-family: Supreme;
     src: url(../components/ui/fonts/SupremeLL-Jumbo.otf);
   }
+
   @font-face {
     font-family: SocialBook;
     src: url(../components/ui/fonts/ABCSocial-Book.otf);
   }
+
   @font-face {
     font-family: SocialBold;
     src: url(../components/ui/fonts/ABCSocial-Bold.otf);
   }
 }
+
 :root {
   background-color: #1B6CFF;
 }
@@ -28,12 +31,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -41,17 +41,20 @@ body {
     text-wrap: balance;
   }
 }
+
 .supreme {
   font-family: Supreme, sans-serif;
 }
+
 .socialBook {
   font-family: SocialBook, sans-serif;
 }
+
 .socialBold {
   font-family: SocialBold, sans-serif;
 }
+
 .pulse {
-  border-radius: 50%;
   animation: pulse-animation 2s infinite;
 }
 
@@ -59,15 +62,17 @@ body {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .pulse2 {
-  border-radius: 50%;
   animation: pulse-animation2 1.9s infinite;
 }
 
@@ -75,10 +80,17 @@ body {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
+}
+
+.nextBtn {
+  background: var(--Green, #00DE60);
+  box-shadow: 0px 0px 0px 7px rgba(0, 222, 96, 0.40), 0px 0px 0px 14px rgba(0, 222, 96, 0.20);
 }
