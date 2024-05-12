@@ -7,6 +7,7 @@ interface ButtonAnswerProps {
   setSelected: (value: string) => void;
   children: string;
   isCorrect: boolean;
+  correct: string | null;
   setIsCorrect: (value: boolean) => void;
 }
 export default function ButtonAnswer({
@@ -14,6 +15,7 @@ export default function ButtonAnswer({
   children,
   isCorrect,
   selected,
+  correct,
   setSelected,
 }: ButtonAnswerProps) {
   return (
@@ -23,14 +25,15 @@ export default function ButtonAnswer({
         setIsCorrect(isCorrect);
       }}
       className={cn(
-        `w-[180px] air:w-[190px] h-[180px] air:h-[190px] rounded-full flex items-center justify-center cursor-pointer bg-blueQuestions socialBold text-[27px] text-white duration-200 text-center leading-8`,
+        `w-[180px] air:w-[190px] border-2 border-transparent h-[180px] air:h-[190px] rounded-full flex items-center justify-center cursor-pointer bg-blueQuestions socialBold text-[27px] text-white duration-200 text-center leading-8`,
         {
-          "bg-greenQuestions": selected !== null && isCorrect === true,
-          "border-2 border-grey-200": selected !== null && isCorrect === false,
+          "bg-greenQuestions": selected !== null && correct === children,
+          "border-2 border-grey-200": selected === children && correct !== children,
         }
       )}
     >
       {children}
     </div>
-  );
+
+);
 }

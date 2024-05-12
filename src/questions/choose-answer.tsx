@@ -12,8 +12,10 @@ interface ChooseAnswerProps {
 }
 
 export function ChooseAnswer({ data }: ChooseAnswerProps) {
+  const correct = data.answers.find((answer) => answer.correct)?.text || null
   const [selected, setSelected] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  
   const nextQuestion = progressStore((state) => state.nextQuestion);
 
   const processAnswer = () => {
@@ -43,6 +45,7 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
                 setIsCorrect={setIsCorrect}
                 setSelected={setSelected}
                 selected={selected}
+                correct={correct}
               
               >
                 {answer.text}
