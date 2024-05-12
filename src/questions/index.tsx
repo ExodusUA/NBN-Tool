@@ -1,1 +1,2 @@
-export { Question1 } from "./question-1";
+export { ChooseAnswer } from "./choose-answer";
+export { RangeAnswer } from "./range-answer";

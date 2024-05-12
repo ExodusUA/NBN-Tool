@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import Logo from "@/components/logo";
 import { Button } from "@/components/lib";
 import { StepNumber } from "@/components/ui";
-import { Question1 } from "@/questions";
+import { ChooseAnswer } from "@/questions";
 import ButtonAnswer from "@/components/lib/button-answer";
 import Correct from "@/components/ui/correct";
 import LogoMark from "@/components/logo-mark";
 import SingleRange from "@/components/ui/single-range";
-import { Question2 } from "@/questions/question-2";
+import { RangeAnswer } from "@/questions/range-answer";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Logo />
       <StepNumber />
       <div>
-        <Question2 />
+        <RangeAnswer />
         {/*
         <Question1 />
 */}
@@ -37,7 +37,7 @@ export default function Home() {
         */}
       </div>
       <Correct></Correct>
-      <LogoMark mt={'portrait:bottom-[130px]'} />
+      <LogoMark mt={"portrait:bottom-[130px]"} />
     </main>
   );
 }

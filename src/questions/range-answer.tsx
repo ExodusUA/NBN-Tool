@@ -4,9 +4,22 @@ import ButtonAnswer from "@/components/lib/button-answer";
 import { Button } from "@/components/lib";
 import { motion } from "framer-motion";
 import SingleRange from "@/components/ui/single-range";
+import { Question } from "@/stores/progressStore";
+import progressStore from "@/stores/progressStore";
 
-export function Question2() {
+interface RangeAnswerProps {
+  data: Question;
+}
+
+export function RangeAnswer({data}: RangeAnswerProps) {
   const [selectedAnswer, setIsSelectedAnswer] = React.useState("");
+
+  const nextQuestion = progressStore((state) => state.nextQuestion);
+
+  const processAnswer = () => {
+
+    nextQuestion()
+  }
 
   return (
     <div>
@@ -16,22 +29,12 @@ export function Question2() {
         transition={{ duration: 0.8 }}
       >
         <p className="socialBold text-white text-[42px] leading-10 landscape:mt-20 max-w-[600px] portrait:mt-[200px]">
-        On average, how many devices are connected to the average household WIFI ?
+          {data.question}
         </p>
       </motion.div>
       <div className="landscape:flex portrait:grid justify-center landscape:mt-24 portrait:mt-[180px] items-center ">
-        <SingleRange />
-        {/*
-        <div className="portrait:flex justify-center landscape:ml-6  portrait:mt-6">
-          <Button variant="blue" disabled>
-            Check
-          </Button>
-        </div>
-        <div className="portrait:flex justify-center landscape:ml-6  portrait:mt-6">
-          <Button variant="white">Check</Button>
-        </div>
-        */}
-        <div className="portrait:flex justify-center landscape:ml-12  portrait:mt-14">
+        <SingleRange dataList={data.answers} />
+        <div onClick={processAnswer} className="portrait:flex justify-center landscape:ml-12  portrait:mt-14">
           <Button variant="green">Next</Button>
         </div>
       </div>

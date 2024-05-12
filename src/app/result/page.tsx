@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import bgFull from "../../images/result/bgFull.png";
 import bgPortrait from "../../images/result/bgPortrait.png";
-import Logo from "../../components/logo";
+import Logo from "@/components/logo";
 import Link from "next/link";
 import { StepNumber } from "@/components/ui";
 import { ResultNumber } from "@/components/ui/result-number";
