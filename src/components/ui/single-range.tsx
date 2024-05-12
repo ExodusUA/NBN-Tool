@@ -32,7 +32,7 @@ export default function SingleRange({ dataList, setSelected, selected, setIsCorr
 
   return (
     <Slider
-      className="portrait:w-[700px] landscape:w-[740px] landscape:air:w-[780px] m-auto portrait:flex  justify-center "
+      className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center "
       aria-label="Temperature"
       valueLabelDisplay="auto"
       marks={marksArray}

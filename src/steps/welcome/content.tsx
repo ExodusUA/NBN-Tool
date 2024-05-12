@@ -35,7 +35,7 @@ export default function Content() {
         transition={{ duration: 0.9 }}
       >
         <Link href="/steps">
-          <button className="socialBold text-[24px] bg-white rounded-[72px] py-3 max-w-[360px] w-full mt-12 text-center  active:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-100 duration-200 outline-none">
+          <button className="socialBold text-[24px] bg-white rounded-[72px] py-3 w-[360px] mt-12 text-center  active:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-100 duration-200 outline-none">
             Get started
           </button>
         </Link>

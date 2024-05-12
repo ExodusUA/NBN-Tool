@@ -20,7 +20,7 @@ export default function page() {
       {currentQuestion.type === "choose" && <ChooseAnswer data={currentQuestion} />}
       {currentQuestion.type === "range" && <RangeAnswer data={currentQuestion} />}
 
-      <LogoMark mt={"portrait:bottom-[130px]"} />
+      <LogoMark mt={"portrait:bottom-[20px]"} />
     </main>
   );
 }

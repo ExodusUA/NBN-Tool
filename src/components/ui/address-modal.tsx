@@ -4,12 +4,18 @@ import close from "../../images/result/closeModal.svg";
 import Logo from "../../images/homepage/logo-nbn.svg";
 import LogoMark from "../../images/logo-mark.svg";
 
-export default function AddressModal() {
+interface AddressModalProps {
+  handleClose: () => void;
+}
+
+export default function AddressModal({ handleClose }: AddressModalProps) {
+  
   const [email, setEmail] = React.useState("");
 
   return (
     <div className="fixed left-0 top-0 w-screen h-screen bg-[#4CE88F] bg-opacity-70 z-40 portrait:py-28 landscape:px-28 px-4 flex justify-center items-center">
       <Image
+        onClick={handleClose}
         className="absolute right-4 top-4 cursor-pointer"
         src={close}
         alt="Logo"

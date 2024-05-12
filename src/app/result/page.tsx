@@ -10,8 +10,18 @@ import { ResultNumber } from "@/components/ui/result-number";
 import LogoMark from "@/components/logo-mark";
 import AddressModal from "@/components/ui/address-modal";
 import { motion } from "framer-motion";
+import { Modal as BaseModal } from "@mui/base/Modal";
+import Fade from "@mui/material/Fade";
+import { Button } from "@mui/base/Button";
+import { Modal } from "@mui/material";
 
 function page() {
+  const [open, setOpen] = React.useState(false);
+  
+  const handleOpen = () => setOpen(true);
+
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="p-10 h-screen bg-greenQuestions relative">
       <Logo />
@@ -57,19 +67,34 @@ function page() {
           transition={{ duration: 0.9 }}
         >
           <div className="flex items-center mt-12">
-            <Link href="/steps">
-              <button className="socialBold text-[24px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
-                Check your address
-              </button>
+            <button
+              onClick={handleOpen}
+              className="socialBold text-[24px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none"
+            >
+              Check your address
+            </button>
+            <Link href="/questions">
+              <p className="text-[28px] socialBold ml-12 cursor-pointer active:underline duration-200">
+                Restart
+              </p>
             </Link>
-            <p className="text-[28px] socialBold ml-12 cursor-pointer active:underline duration-200">
-              Restart
-            </p>
           </div>
         </motion.div>
       </div>
       <LogoMark mt={"portrait:bottom-[30px]"} />
-      {/*<AddressModal />*/}
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+      >
+        <Fade in={open}>
+          <div>
+            <AddressModal handleClose={handleClose} />
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 }

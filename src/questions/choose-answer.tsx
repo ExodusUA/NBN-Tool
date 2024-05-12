@@ -12,17 +12,15 @@ interface ChooseAnswerProps {
 }
 
 export function ChooseAnswer({ data }: ChooseAnswerProps) {
-  const correct = data.answers.find((answer) => answer.correct)?.text || null
+  const correct = data.answers.find((answer) => answer.correct)?.text || null;
   const [selected, setSelected] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  
+
   const nextQuestion = progressStore((state) => state.nextQuestion);
 
   const processAnswer = () => {
-
-
-    nextQuestion()
-  }
+    nextQuestion();
+  };
 
   return (
     <div>
@@ -31,13 +29,13 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <p className="socialBold text-white text-[42px] leading-10 mt-20">
+        <p className="socialBold text-white text-[42px] leading-10 mt-20 portrait:mt-[190px] landscape:max-w-[600px]">
           {data.question}
         </p>
       </motion.div>
-      <div className="landscape:flex portrait:grid portrait:justify-center mt-16 items-center ">
-        <div className="flex w-[400px] justify-between landscape:mr-2 air:landscape:mr-6">
-          <div className="landscape:mr-2 flex">
+      <div className="landscape:flex portrait:grid  justify-center mt-16 portrait:mt-6 items-center ">
+        <div className="flex  justify-between landscape:mr-2 air:landscape:mr-6">
+          <div className=" flex portrait:flex-wrap portrait:w-[500px] justify-center">
             {data.answers.map((answer, index) => (
               <ButtonAnswer
                 key={index}
@@ -46,7 +44,6 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
                 setSelected={setSelected}
                 selected={selected}
                 correct={correct}
-              
               >
                 {answer.text}
               </ButtonAnswer>
@@ -64,6 +61,7 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
           <Button variant="white">Check</Button>
         </div>
         */}
+        {/*
         <div className="portrait:flex justify-center landscape:ml-6  portrait:mt-6">
           <Button
             onClick={() => {
@@ -74,11 +72,10 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
             Next
           </Button>
         </div>
+        */}
       </div>
 
-      {
-       isCorrect !== null && <Correct correct={isCorrect} />
-      }
+      {isCorrect !== null && <Correct correct={isCorrect} />}
     </div>
   );
 }

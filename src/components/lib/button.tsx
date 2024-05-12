@@ -4,12 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/components/lib/utils";
 
 const buttonVariants = cva(
-  "text-[26px] font-semibold duration-300 inline-flex items-center justify-center gap-1 disabled:opacity-50 socialBook text-black w-[180px] h-[66px] rounded-[75px] cursor-pointer",
+  "text-[21px] font-semibold duration-300 inline-flex items-center justify-center gap-1 disabled:opacity-50 socialBook text-black w-[200px] h-[56px] rounded-[75px] cursor-pointer",
   {
     variants: {
       variant: {
         white: "bg-white text-gray-900 active:scale-95",
-        blue: "bg-blue  hover:bg-blue-600 active:bg-blue-400 disabled:bg-blue-300 disabled:text-blue-200 disabled:bg-btnCheck",
+        blue: "bg-blue  hover:bg-blue-600 active:bg-blue-400 disabled:bg-blue-300 disabled:text-blue-200 disabled:bg-btnCheck ",
         green: "bg-green text-black nextBtn active:scale-95",
       },
 

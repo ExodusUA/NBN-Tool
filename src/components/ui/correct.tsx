@@ -1,33 +1,66 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { cn } from "../lib/utils";
+import { Button } from "../lib";
+import progressStore from "@/stores/progressStore";
 
 interface CorrectProps {
-  correct: boolean
+  correct: boolean;
 }
 
-export default function Correct({correct}: CorrectProps) {
+export default function Correct({ correct }: CorrectProps) {
+  const nextQuestion = progressStore((state) => state.nextQuestion);
+
+  const processAnswer = () => {
+    nextQuestion();
+  };
   return (
     <div>
+      
       <motion.div
-        
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ ease: "easeOut", duration: 0.3 }}
-        style={{ transform: "translateX(-50%, -50%)" }}
-        
-      ></motion.div>
-      <div className="fixed left-1/2 transform -translate-x-1/2 bottom-[-810px] w-[1000px] h-[1000px] bg-[#4989FF] rounded-full flex"></div>
-      <div className="fixed left-1/2 transform -translate-x-1/2 bottom-[-790px] w-[950px] h-[950px] bg-[#6DA1FF] rounded-full flex items-center justify-center "></div>
-      <div className="fixed left-1/2 transform -translate-x-1/2 bottom-[-770px] w-[900px] h-[900px] bg-[#8AB4FF] rounded-full flex items-center justify-center ">
-        <div className="absolute top-[20px] z-20">
-          <p className="text-center text-[55px] text-black socialBold leading-[64px]">
-            {correct ? "correct!" : "incorrect!"}
-          </p>
-          <p className="text-center text-black socialBold">
-            Fortnite updates: Australia's data apocalypse day
-          </p>
-        </div>
-      </div>
+        initial={{ bottom: -200 }}
+        animate={{ bottom: 0 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+        layout
+      
+          className={cn(
+            `fixed bottom-0 w-full left-0  bg-[#FF2A57] flex z-50`,
+            {
+              "bg-green": correct,
+            }
+          )}
+        >
+          <div className="p-8 flex justify-between items-center w-full px-10">
+            <div>
+              <p
+                className={cn(
+                  ` text-[55px] text-white socialBold leading-[64px]`,
+                  {
+                    "text-black": correct,
+                  }
+                )}
+              >
+                {correct ? "correct!" : "incorrect!"}
+              </p>
+              <p
+                className={cn(`text-center text-white socialBold`, {
+                  "text-black": correct,
+                })}
+              >
+                Fortnite updates: Australia's data apocalypse day
+              </p>
+            </div>
+            <Button
+              onClick={() => {
+                processAnswer();
+              }}
+              variant="white"
+            >
+              Next
+            </Button>
+          </div>
+          </motion.div>
+      
     </div>
   );
 }

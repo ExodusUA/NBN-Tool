@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ButtonAnswer from "@/components/lib/button-answer";
 import { Button } from "@/components/lib";
 import { motion } from "framer-motion";
@@ -13,18 +13,16 @@ interface RangeAnswerProps {
   data: Question;
 }
 
-export function RangeAnswer({data}: RangeAnswerProps) {
-
-  const correct = data.answers.find((answer) => answer.correct)?.text || null
+export function RangeAnswer({ data }: RangeAnswerProps) {
+  const correct = data.answers.find((answer) => answer.correct)?.text || null;
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [selected, setSelected] = useState<string | undefined>('');
+  const [selected, setSelected] = useState<string | undefined>("");
 
   const nextQuestion = progressStore((state) => state.nextQuestion);
 
   const processAnswer = () => {
-
-    nextQuestion()
-  }
+    nextQuestion();
+  };
 
   return (
     <div>
@@ -37,16 +35,21 @@ export function RangeAnswer({data}: RangeAnswerProps) {
           {data.question}
         </p>
       </motion.div>
-      <div className="landscape:flex portrait:grid justify-center landscape:mt-24 portrait:mt-[180px] items-center ">
-        <SingleRange setIsCorrect={setIsCorrect} dataList={data.answers} selected={selected} setSelected={setSelected} />
+      <div className="flex justify-center landscape:mt-24 portrait:mt-[180px] items-center ">
+        <SingleRange
+          setIsCorrect={setIsCorrect}
+          dataList={data.answers}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        {/*
         <div onClick={processAnswer} className="portrait:flex justify-center landscape:ml-12  portrait:mt-14">
           <Button variant="green">Next</Button>
         </div>
+        */}
       </div>
 
-      {
-       isCorrect !== null && <Correct correct={isCorrect} />
-      }
+      {isCorrect !== null && <Correct correct={isCorrect} />}
     </div>
   );
 }
