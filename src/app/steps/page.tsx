@@ -8,6 +8,7 @@ import ButtonAnswer from "@/components/lib/button-answer";
 import Correct from "@/components/ui/correct";
 import LogoMark from "@/components/logo-mark";
 import SingleRange from "@/components/ui/single-range";
+import { Question2 } from "@/questions/question-2";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <Logo />
       <StepNumber />
       <div>
-        <SingleRange />
+        <Question2 />
         {/*
         <Question1 />
 */}
@@ -36,7 +37,7 @@ export default function Home() {
         */}
       </div>
       <Correct></Correct>
-      <LogoMark />
+      <LogoMark mt={'portrait:bottom-[130px]'} />
     </main>
   );
 }

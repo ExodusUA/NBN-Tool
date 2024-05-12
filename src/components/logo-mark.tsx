@@ -3,7 +3,12 @@ import logoMark from "../images/logo-mark.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function LogoMark() {
+
+interface LogoMarkProps {
+  mt: string;
+}
+
+export default function LogoMark({ mt }: LogoMarkProps) {
   return (
     <motion.div
       initial={{ scale: 1, opacity: 0 }}
@@ -12,7 +17,7 @@ export default function LogoMark() {
     >
       <Image
         src={logoMark}
-        className="w-[120px] z-20 fixed right-6 landscape:bottom-12 portrait:bottom-[130px] "
+        className={`w-[120px] z-50 fixed right-6 landscape:bottom-12  ${mt}`}
         alt="Logo"
       />
     </motion.div>
