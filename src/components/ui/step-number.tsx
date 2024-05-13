@@ -19,7 +19,7 @@ export function StepNumber() {
         <div className="flex">
           <p className="socialBold text-[110px] pb-6 pr-3">{currentQuestion.id}</p>
           <hr className="w-[110px] h-[8px] bg-black absolute rotate-[130deg] top-[110px] left-[50px]" />
-          <p className="socialBold text-[70px] pt-[76px] pr-3">6</p>
+          <p className="socialBold text-[70px] pt-[76px] pr-3">6.</p>
         </div>
       </div>
     </motion.div>
