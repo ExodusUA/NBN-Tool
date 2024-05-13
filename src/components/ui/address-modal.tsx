@@ -9,7 +9,6 @@ interface AddressModalProps {
 }
 
 export default function AddressModal({ handleClose }: AddressModalProps) {
-  
   const [email, setEmail] = React.useState("");
 
   return (
@@ -20,7 +19,7 @@ export default function AddressModal({ handleClose }: AddressModalProps) {
         src={close}
         alt="Logo"
       />
-      <div className="bg-white pb-12 w-full">
+      <div className="bg-white pb-12 w-full max-w-[725px]">
         <div className="bg-[#21327E] p-4 pt-6 pb-[100px]">
           <div className="flex justify-between items-center ">
             <div className="flex items-start">

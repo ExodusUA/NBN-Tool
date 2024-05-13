@@ -34,7 +34,7 @@ export default function Content() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9 }}
       >
-        <Link href="/steps">
+        <Link href="/questions">
           <button className="socialBold text-[24px] bg-white rounded-[72px] py-3 w-[360px] mt-12 text-center  active:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-100 duration-200 outline-none">
             Get started
           </button>

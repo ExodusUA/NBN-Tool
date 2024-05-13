@@ -1,10 +1,9 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState } from "react";
 import ButtonAnswer from "@/components/lib/button-answer";
-import { Button } from "@/components/lib";
 import { motion } from "framer-motion";
-import { Question } from "@/stores/progressStore";
-import progressStore from "@/stores/progressStore";
+import progressStore, { Question } from "@/stores/progressStore";
 import Correct from "@/components/ui/correct";
 
 interface ChooseAnswerProps {
@@ -13,14 +12,11 @@ interface ChooseAnswerProps {
 
 export function ChooseAnswer({ data }: ChooseAnswerProps) {
   const correct = data.answers.find((answer) => answer.correct)?.text || null;
+
+  const currentQuestion = progressStore((state) => state.currentQuestion);
+
   const [selected, setSelected] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-
-  const nextQuestion = progressStore((state) => state.nextQuestion);
-
-  const processAnswer = () => {
-    nextQuestion();
-  };
 
   return (
     <div>
@@ -50,32 +46,11 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
             ))}
           </div>
         </div>
-
-        {/*
-        <div className="portrait:flex justify-center landscape:ml-6  portrait:mt-6">
-          <Button variant="blue" disabled>
-            Check
-          </Button>
-        </div>
-        <div className="portrait:flex justify-center landscape:ml-6  portrait:mt-6">
-          <Button variant="white">Check</Button>
-        </div>
-        */}
-        {/*
-        <div className="portrait:flex justify-center landscape:ml-6  portrait:mt-6">
-          <Button
-            onClick={() => {
-              processAnswer();
-            }}
-            variant="green"
-          >
-            Next
-          </Button>
-        </div>
-        */}
       </div>
 
-      {isCorrect !== null && <Correct correct={isCorrect} />}
+      {isCorrect !== null && currentQuestion.id === data.id && (
+        <Correct correct={isCorrect} data={data.hints[0]} />
+      )}
     </div>
   );
 }

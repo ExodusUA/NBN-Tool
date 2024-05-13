@@ -1,26 +1,36 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import bgFull from "../../images/result/bgFull.png";
 import bgPortrait from "../../images/result/bgPortrait.png";
 import Logo from "@/components/logo";
-import Link from "next/link";
-import { StepNumber } from "@/components/ui";
 import { ResultNumber } from "@/components/ui/result-number";
 import LogoMark from "@/components/logo-mark";
 import AddressModal from "@/components/ui/address-modal";
 import { motion } from "framer-motion";
-import { Modal as BaseModal } from "@mui/base/Modal";
 import Fade from "@mui/material/Fade";
-import { Button } from "@mui/base/Button";
 import { Modal } from "@mui/material";
+import progressStore from "@/stores/progressStore";
+import { useRouter } from "next/navigation";
 
 function page() {
   const [open, setOpen] = React.useState(false);
-  
+  const navigate = useRouter();
+
+  const restart = progressStore((state) => state.restart);
+  const answers = progressStore((state) => state.answers);
+
+  const wellDone = answers.filter((answer) => answer === true).length > 3;
+
   const handleOpen = () => setOpen(true);
 
   const handleClose = () => setOpen(false);
+
+  const handleRestart = () => {
+    restart();
+    navigate.push("/questions");
+  };
 
   return (
     <div className="p-10 h-screen bg-greenQuestions relative">
@@ -44,7 +54,15 @@ function page() {
           transition={{ duration: 0.9 }}
         >
           <p className="supreme uppercase text-[128px] font-black leading-[110px] mt-6">
-            well <br /> done
+            {wellDone === true ? (
+              <span>
+                well <br /> done
+              </span>
+            ) : (
+              <span>
+                not <br /> bad
+              </span>
+            )}
           </p>
         </motion.div>
         <motion.div
@@ -73,11 +91,13 @@ function page() {
             >
               Check your address
             </button>
-            <Link href="/questions">
-              <p className="text-[28px] socialBold ml-12 cursor-pointer active:underline duration-200">
-                Restart
-              </p>
-            </Link>
+
+            <p
+              onClick={handleRestart}
+              className="text-[28px] socialBold ml-12 cursor-pointer active:underline duration-200"
+            >
+              Restart
+            </p>
           </div>
         </motion.div>
       </div>
