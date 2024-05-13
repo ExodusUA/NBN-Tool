@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/homepage/logo-nbn.svg";
+import logo from "@/images/homepage/logo-nbn.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

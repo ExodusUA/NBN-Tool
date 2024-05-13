@@ -54,38 +54,38 @@ export default function SingleRange({
           .MuiSlider-mark[data-index="${dataList.length + 1}"] {
             display: none;
           }
-          .css-188mx6n-MuiSlider-root {
+          .MuiSlider-root {
             height: 40px !important;
           }
           
-          .css-ttgsjq-MuiSlider-track {
+          .MuiSlider-track {
             background-color: #4CE88F !important;
             border-radius: 40px !important;
             border: none !important;
             transition: all 0.3s ease 0s !important;
           }
           
-          .css-7o8aqz-MuiSlider-rail {
+          .MuiSlider-rail {
             background-color: #5F98FF !important;
             border-radius: 40px !important;
           }
           
-          .css-cp2j25-MuiSlider-thumb {
+          .MuiSlider-thumb {
             width: 64px !important;
             height: 64px !important;
             background-color: white !important;
             transition: all 0.3s ease 0s !important;
           }
           
-          .css-cp2j25-MuiSlider-thumb.Mui-active {
+          .MuiSlider-thumb.Mui-active {
             box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
           }
           
-          .css-cp2j25-MuiSlider-thumb:hover {
+          .MuiSlider-thumb:hover {
             box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
           }
           
-          .css-14gyywz-MuiSlider-valueLabel {
+          .MuiSlider-valueLabel {
             background-color: #5F98FF !important;
             font-family: SocialBold, sans-serif;
             border-radius: 20px !important;
@@ -93,16 +93,16 @@ export default function SingleRange({
             padding: 0.25rem 1rem !important;
           }
           
-          .css-z5sdnj-MuiSlider-mark {
+          .MuiSlider-mark {
             height: 60px !important;
             top: 60% !important;
           }
           
-          .css-ltlhnc-MuiSlider-root {
+          .MuiSlider-root {
             height: 40px !important;
           }
           
-          .css-1bvr8oc-MuiSlider-markLabel {
+          .MuiSlider-markLabel {
             font-family: SocialBold, sans-serif !important;
             font-size: 26px !important;
             color: white !important;
@@ -113,7 +113,7 @@ export default function SingleRange({
             line-height: 1.3 !important;
           }
           
-          .css-1ucwjgd-MuiSlider-markLabel {
+          .MuiSlider-markLabel {
             font-family: SocialBold, sans-serif !important;
             font-size: 26px !important;
             color: white !important;
@@ -127,7 +127,7 @@ export default function SingleRange({
           .MuiSlider-mark[data-index="last"] {
             display: none;
           }
-          .css-hzp7sc-MuiSlider-mark {
+          .MuiSlider-mark {
             height: 60px !important;
             top: 60% !important;
             background-color: white !important;
