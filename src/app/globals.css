@@ -166,25 +166,25 @@ body {
 }
 
 .css-1bvr8oc-MuiSlider-markLabel {
-  font-family: SocialBold, sans-serif;
+  font-family: SocialBold, sans-serif !important;
   font-size: 26px !important;
   color: white !important;
   top: 90px !important;
   white-space: unset !important;
   width: 150px !important;
   text-align: center !important;
-  line-height: 1.2 !important;
+  line-height: 1.3 !important;
 }
 
 .css-1ucwjgd-MuiSlider-markLabel {
-  font-family: SocialBold, sans-serif;
+  font-family: SocialBold, sans-serif !important;
   font-size: 26px !important;
   color: white !important;
   top: 90px !important;
   white-space: unset !important;
   width: 150px !important;
   text-align: center !important;
-  line-height: 1.2 !important;
+  line-height: 1.3 !important;
 }
 .MuiSlider-mark[data-index="0"],
 .MuiSlider-mark[data-index="last"] {
