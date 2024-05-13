@@ -43,15 +43,15 @@ export default function AddressModal({ handleClose }: AddressModalProps) {
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className=" outline-none border-b border-b-black bg-transparent text-[24px]"
+              className=" outline-none border-b border-b-black bg-transparent text-[24px] max-w-[250px] w-full mr-4"
               placeholder="Type your address"
               type="text"
             />
             <div className="flex justify-between w-full">
-              <button className="bg-[#9FE311] text-[18px] font-semibold w-full rounded-[40px] py-3 mx-2 active:scale-95 duration-100">
+              <button className="bg-[#9FE311] text-[16px] font-semibold w-full rounded-[40px] py-3 mx-2 active:scale-95 duration-100">
                 Check residential
               </button>
-              <button className="bg-[#9FE311] text-[18px] font-semibold w-full rounded-[40px] py-3 active:scale-95 duration-100">
+              <button className="bg-[#9FE311] text-[16px] font-semibold w-full rounded-[40px] py-3 active:scale-95 duration-100">
                 Check business
               </button>
             </div>

@@ -47,28 +47,38 @@ export default function SingleRange({
   });
 
   return (
-    <Slider
-      className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center "
-      aria-label="Temperature"
-      valueLabelDisplay="auto"
-      value={value}
-      valueLabelFormat={(value) => {
-        let label = marksArray.find((mark) => mark.value === value)?.label;
-        return label;
-      }}
-      marks={marksArray}
-      step={null}
-      onChange={(e, value) => {
-        setValue(value);
-      }}
-      onChangeCommitted={(e, value) => {
-        let label = marksArray.find((mark) => mark.value === value)?.label;
-        setSelected(label);
+    <>
+      <style>
+        {`
+          .MuiSlider-mark[data-index="0"],
+          .MuiSlider-mark[data-index="${dataList.length + 1}"] {
+            display: none;
+          }
+        `}
+      </style>
+      <Slider
+        className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center"
+        aria-label="Temperature"
+        valueLabelDisplay="auto"
+        value={value}
+        valueLabelFormat={(value) => {
+          let label = marksArray.find((mark) => mark.value === value)?.label;
+          return label;
+        }}
+        marks={marksArray}
+        step={null}
+        onChange={(e, value) => {
+          setValue(value);
+        }}
+        onChangeCommitted={(e, value) => {
+          let label = marksArray.find((mark) => mark.value === value)?.label;
+          setSelected(label);
 
-        setIsCorrect(
-          dataList.find((data) => data.text === label)?.correct || false
-        );
-      }}
-    />
+          setIsCorrect(
+            dataList.find((data) => data.text === label)?.correct || false
+          );
+        }}
+      />
+    </>
   );
 }
