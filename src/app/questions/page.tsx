@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "@/components/logo";
+import Logo from "@/components/logotype";
 import { StepNumber } from "@/components/ui";
 import Correct from "@/components/ui/correct";
 import LogoMark from "@/components/logo-mark";
@@ -17,8 +17,12 @@ export default function page() {
       <Logo />
       <StepNumber />
 
-      {currentQuestion.type === "choose" && <ChooseAnswer data={currentQuestion} />}
-      {currentQuestion.type === "range" && <RangeAnswer data={currentQuestion} />}
+      {currentQuestion.type === "choose" && (
+        <ChooseAnswer data={currentQuestion} />
+      )}
+      {currentQuestion.type === "range" && (
+        <RangeAnswer data={currentQuestion} />
+      )}
 
       <LogoMark mt={"portrait:bottom-[20px]"} />
     </main>

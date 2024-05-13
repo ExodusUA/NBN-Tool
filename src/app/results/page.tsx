@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import bgFull from "../../images/result/bgFull.png";
 import bgPortrait from "../../images/result/bgPortrait.png";
-import Logo from "@/components/logo";
+import Logo from "@/components/logotype";
 import { ResultNumber } from "@/components/ui/result-number";
 import LogoMark from "@/components/logo-mark";
 import AddressModal from "@/components/ui/address-modal";

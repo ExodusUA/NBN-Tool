@@ -3,7 +3,7 @@
 import Image from "next/image";
 import bgFull from "@/images/homepage/bgFull.png";
 import bgPortrait from "@/images/homepage/bgPortrait.png";
-import Logo from "@/components/logo";
+import Logo from "@/components/logotype";
 import Content from "./welcome/content";
 
 export function Welcome() {

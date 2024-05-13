@@ -1,14 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import Logo from "@/components/logo";
-import { Button } from "@/components/lib";
+import Logo from "@/components/logotype";
 import { StepNumber } from "@/components/ui";
-import { ChooseAnswer } from "@/questions";
-import ButtonAnswer from "@/components/lib/button-answer";
-import Correct from "@/components/ui/correct";
 import LogoMark from "@/components/logo-mark";
-import SingleRange from "@/components/ui/single-range";
-import { RangeAnswer } from "@/questions/range-answer";
 
 export default function Home() {
   return (
