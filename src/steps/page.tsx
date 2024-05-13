@@ -16,7 +16,6 @@ export default function Home() {
       <Logo />
       <StepNumber />
       <div>
-        <RangeAnswer />
         {/*
         <Question1 />
 */}
@@ -36,7 +35,7 @@ export default function Home() {
         </Button>
         */}
       </div>
-      <Correct></Correct>
+
       <LogoMark mt={"portrait:bottom-[130px]"} />
     </main>
   );
