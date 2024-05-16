@@ -20,9 +20,15 @@ export default function SingleRange({
   setIsCorrect,
 }: SingleRangeProps) {
   const [value, setValue] = useState<number | number[]>(0);
+  const [correctAnswerPosition, setCorrectAnswerPosition] = useState<
+    number | null
+  >(null);
+  const [firstInput, setFirstInput] = useState<boolean>(false);
 
   useEffect(() => {
     setValue(0);
+    const correctIndex = dataList.findIndex((data) => data.correct);
+    setCorrectAnswerPosition(correctIndex !== -1 ? correctIndex : null);
   }, [dataList]);
 
   let marksArray = [
@@ -45,6 +51,12 @@ export default function SingleRange({
     value: 100,
     label: "",
   });
+
+  const handleInput = () => {
+    if (!firstInput) {
+      setFirstInput(true);
+    }
+  };
 
   return (
     <>
@@ -134,29 +146,62 @@ export default function SingleRange({
           }
         `}
       </style>
-      <Slider
-        className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center"
-        aria-label="Temperature"
-        valueLabelDisplay="auto"
-        value={value}
-        valueLabelFormat={(value) => {
-          let label = marksArray.find((mark) => mark.value === value)?.label;
-          return label;
-        }}
-        marks={marksArray}
-        step={null}
-        onChange={(e, value) => {
-          setValue(value);
-        }}
-        onChangeCommitted={(e, value) => {
-          let label = marksArray.find((mark) => mark.value === value)?.label;
-          setSelected(label);
+      <div style={{ position: "relative" }}>
+        {" "}
+        
+        <Slider
+          className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center"
+          aria-label="Temperature"
+          value={value}
+          valueLabelDisplay="auto"
+          valueLabelFormat={(value) => {
+            let label = marksArray.find((mark) => mark.value === value)?.label;
+            return label;
+          }}
+          marks={marksArray}
+          step={null}
+          onChange={(e, value) => {
+            setValue(value);
+          }}
+          onChangeCommitted={(e, value) => {
+            let label = marksArray.find((mark) => mark.value === value)?.label;
+            setSelected(label);
 
-          setIsCorrect(
-            dataList.find((data) => data.text === label)?.correct || false
-          );
-        }}
-      />
+            setIsCorrect(
+              dataList.find((data) => data.text === label)?.correct || false
+            );
+
+            if (
+              !firstInput &&
+              selected !== label &&
+              dataList.find((data) => data.text === label)?.correct
+            ) {
+              const correctIndex = dataList.findIndex(
+                (data) => data.text === label
+              );
+              setCorrectAnswerPosition(correctIndex);
+              setFirstInput(true);
+            }
+          }}
+          onClick={handleInput}
+        />
+        {firstInput && correctAnswerPosition !== null && (
+          <span
+            style={{
+              position: "absolute",
+
+              left: `${marksArray[correctAnswerPosition + 1].value}%`,
+              transform: "translateX(-50%)",
+              backgroundColor: "#FFFFFF",
+              width: "64px",
+              height: "64px",
+              borderRadius: "50%",
+              zIndex: 1000,
+              opacity: 0.5,
+            }}
+          ></span>
+        )}
+      </div>
     </>
   );
 }
