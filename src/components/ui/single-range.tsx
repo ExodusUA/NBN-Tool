@@ -58,6 +58,10 @@ export default function SingleRange({
     }
   };
 
+  useEffect(() => {
+    setFirstInput(false);
+  }, [dataList]);
+
   return (
     <>
       <style>
@@ -148,7 +152,6 @@ export default function SingleRange({
       </style>
       <div style={{ position: "relative" }}>
         {" "}
-        
         <Slider
           className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center"
           aria-label="Temperature"
@@ -185,7 +188,7 @@ export default function SingleRange({
           }}
           onClick={handleInput}
         />
-        {firstInput && correctAnswerPosition !== null && (
+        {firstInput === true && correctAnswerPosition !== null && (
           <span
             style={{
               position: "absolute",
