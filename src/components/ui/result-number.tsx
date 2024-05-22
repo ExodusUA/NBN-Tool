@@ -17,7 +17,7 @@ export function ResultNumber() {
       <div className="fixed portrait:right-[48px] portrait:top-[408px] landscape:right-[318px] landscape:top-[98px] w-[200px] h-[200px] bg-white rounded-full flex items-center justify-center z-20">
         <div className="flex">
           <p className="socialBold text-[110px] pb-6 pr-3">
-            {answers.filter((i) => i === true).length}
+            {answers.filter((i) => i === true).length + 1}
           </p>
           <hr className="w-[110px] h-[8px] bg-black absolute rotate-[130deg] top-[110px] left-[50px]" />
           <p className="socialBold text-[70px] pt-[76px] pr-3">6</p>

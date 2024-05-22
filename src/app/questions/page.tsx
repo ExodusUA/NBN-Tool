@@ -1,12 +1,10 @@
 "use client";
 
 import Logo from "@/components/logotype";
-import { StepNumber } from "@/components/ui";
-import Correct from "@/components/ui/correct";
+import { AnswersNumber } from "@/components/ui";
 import LogoMark from "@/components/logo-mark";
 import { RangeAnswer } from "@/questions/range-answer";
 import progressStore from "@/stores/progressStore";
-import questions from "@/data/questions";
 import { ChooseAnswer } from "@/questions";
 
 export default function page() {
@@ -15,7 +13,7 @@ export default function page() {
   return (
     <main className=" p-10">
       <Logo />
-      <StepNumber />
+      <AnswersNumber />
 
       {currentQuestion.type === "choose" && (
         <ChooseAnswer data={currentQuestion} />

@@ -1,1 +1,1 @@
-export { StepNumber } from "./step-number";
+export { AnswersNumber } from "./answers-number";

@@ -1,13 +1,11 @@
 "use client";
 import Logo from "@/components/logotype";
-import { StepNumber } from "@/components/ui";
 import LogoMark from "@/components/logo-mark";
 
 export default function Home() {
   return (
     <main className=" p-10">
       <Logo />
-      <StepNumber />
       <div>
         {/*
         <Question1 />

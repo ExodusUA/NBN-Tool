@@ -19,7 +19,9 @@ export default function Correct({ correct, data }: CorrectProps) {
 
   const processAnswer = () => {
     if (currentQuestion.id === 6) return navigate.push("/results");
-    nextQuestion(correct);
+    nextQuestion(
+      currentQuestion.id === 5 || currentQuestion.id === 6 ? true : correct
+    );
   };
   return (
     <motion.div

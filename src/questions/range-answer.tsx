@@ -40,6 +40,7 @@ export function RangeAnswer({ data }: RangeAnswerProps) {
             dataList={data.answers}
             selected={selected}
             setSelected={setSelected}
+            isCorrect={isCorrect}
           />
         )}
       </div>

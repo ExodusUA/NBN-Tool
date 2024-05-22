@@ -4,7 +4,6 @@ import questions from '@/data/questions'
 type Store = {
     currentQuestion: Question,
     answers: boolean[],
-    addAnswer: (answer: boolean) => void,
     nextQuestion: (correct: boolean) => void,
     restart: () => void
 }
@@ -26,7 +25,6 @@ const progressStore = create<Store>()((set) => ({
     currentQuestion: questions[0],
     answers: [],
     nextQuestion: (correct) => set((state) => ({ currentQuestion: questions[state.currentQuestion.id], answers: [...state.answers, correct] })),
-    addAnswer: (answer: boolean) => set((state) => ({ answers: [...state.answers, answer] })),
     restart: () => set({ currentQuestion: questions[0], answers: [] })
 }))
 

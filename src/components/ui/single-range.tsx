@@ -8,6 +8,7 @@ interface SingleRangeProps {
     text: string;
     correct: boolean;
   }[];
+  isCorrect: boolean | null;
   selected: string | undefined;
   setSelected: (value: string | undefined) => void;
   setIsCorrect: (value: boolean | null) => void;
@@ -18,6 +19,7 @@ export default function SingleRange({
   setSelected,
   selected,
   setIsCorrect,
+  isCorrect,
 }: SingleRangeProps) {
   const [value, setValue] = useState<number | number[]>(0);
   const [correctAnswerPosition, setCorrectAnswerPosition] = useState<
@@ -190,17 +192,23 @@ export default function SingleRange({
         />
         {firstInput === true && correctAnswerPosition !== null && (
           <span
+            onClick={(e) => {
+              //set correct value
+              setValue(marksArray[correctAnswerPosition + 1].value);
+              setSelected(marksArray[correctAnswerPosition + 1].label);
+              setIsCorrect(true);
+            }}
             style={{
               position: "absolute",
-
+              cursor: "pointer",
               left: `${marksArray[correctAnswerPosition + 1].value}%`,
               transform: "translateX(-50%)",
-              backgroundColor: "#FFFFFF",
+              backgroundColor: isCorrect === true ? "#FFFFFF" : "#FF2A57",
               width: "64px",
               height: "64px",
               borderRadius: "50%",
-              zIndex: 1000,
-              opacity: 0.5,
+              zIndex: 1,
+              opacity: isCorrect === true ? 0.5 : 1,
             }}
           ></span>
         )}

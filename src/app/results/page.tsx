@@ -1,21 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import bgFull from "../../images/result/bgFull.png";
 import bgPortrait from "../../images/result/bgPortrait.png";
 import Logo from "@/components/logotype";
 import { ResultNumber } from "@/components/ui/result-number";
 import LogoMark from "@/components/logo-mark";
-import AddressModal from "@/components/ui/address-modal";
 import { motion } from "framer-motion";
-import Fade from "@mui/material/Fade";
-import { Modal } from "@mui/material";
 import progressStore from "@/stores/progressStore";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function page() {
-  const [open, setOpen] = React.useState(false);
   const navigate = useRouter();
 
   const restart = progressStore((state) => state.restart);
@@ -23,13 +20,9 @@ function page() {
 
   const wellDone = answers.filter((answer) => answer === true).length > 3;
 
-  const handleOpen = () => setOpen(true);
-
-  const handleClose = () => setOpen(false);
-
   const handleRestart = () => {
     restart();
-    navigate.push("/questions");
+    navigate.push("/");
   };
 
   return (
@@ -85,12 +78,14 @@ function page() {
           transition={{ duration: 0.9 }}
         >
           <div className="flex items-center mt-12">
-            <button
-              onClick={handleOpen}
-              className="socialBold text-[24px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none"
+            <Link
+              href="https://www.nbnco.com.au/connect-home-or-business/check-your-address"
+              target="_blank"
             >
-              Check your address
-            </button>
+              <button className="socialBold text-[24px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
+                Check your address
+              </button>
+            </Link>
 
             <p
               onClick={handleRestart}
@@ -102,19 +97,6 @@ function page() {
         </motion.div>
       </div>
       <LogoMark mt={"portrait:bottom-[30px]"} />
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-      >
-        <Fade in={open}>
-          <div>
-            <AddressModal handleClose={handleClose} />
-          </div>
-        </Fade>
-      </Modal>
     </div>
   );
 }

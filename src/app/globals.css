@@ -20,20 +20,23 @@
 }
 
 :root {
-  background-color: #1B6CFF;
+  background-color: #1b6cff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    background-color: #1B6CFF;
+    background-color: #1b6cff;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -91,8 +94,9 @@ body {
 }
 
 .nextBtn {
-  background: var(--Green, #00DE60);
-  box-shadow: 0px 0px 0px 7px rgba(0, 222, 96, 0.40), 0px 0px 0px 14px rgba(0, 222, 96, 0.20);
+  background: var(--Green, #00de60);
+  box-shadow: 0px 0px 0px 7px rgba(0, 222, 96, 0.4),
+    0px 0px 0px 14px rgba(0, 222, 96, 0.2);
 }
 
 .MuiSlider-root {
@@ -100,14 +104,14 @@ body {
 }
 
 .MuiSlider-track {
-  background-color: #4CE88F !important;
+  background-color: #4ce88f !important;
   border-radius: 40px !important;
   border: none !important;
   transition: all 0.3s ease 0s !important;
 }
 
 .MuiSlider-rail {
-  background-color: #5F98FF !important;
+  background-color: #5f98ff !important;
   border-radius: 40px !important;
 }
 
@@ -116,18 +120,21 @@ body {
   height: 64px !important;
   background-color: white !important;
   transition: all 0.3s ease 0s !important;
+  z-index: 10 !important;
 }
 
 .MuiSlider-thumb.Mui-active {
-  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16),
+    0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
 }
 
 .MuiSlider-thumb:hover {
-  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16),
+    0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
 }
 
 .MuiSlider-valueLabel {
-  background-color: #5F98FF !important;
+  background-color: #5f98ff !important;
   font-family: SocialBold, sans-serif;
   border-radius: 20px !important;
   top: -15px !important;
@@ -175,14 +182,20 @@ body {
 }
 
 .checkAdressBtn {
-  box-shadow: 0px 0px 0px 6.728px rgba(27, 108, 255, 0.40), 0px 0px 0px 13.456px rgba(27, 108, 255, 0.20);
+  box-shadow: 0px 0px 0px 6.728px rgba(27, 108, 255, 0.4),
+    0px 0px 0px 13.456px rgba(27, 108, 255, 0.2);
 }
 
 .checkAdressLine {
-  background: linear-gradient(90deg, #0481F5 0%, #55ACA6 35.5%, #77C474 71%, #9EE11D 100%);
+  background: linear-gradient(
+    90deg,
+    #0481f5 0%,
+    #55aca6 35.5%,
+    #77c474 71%,
+    #9ee11d 100%
+  );
 }
 
 .checkAdressBlockShadow {
   box-shadow: 0px 20px 54.4px -10px rgba(0, 0, 0, 0.25);
 }
-
