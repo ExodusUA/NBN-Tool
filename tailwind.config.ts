@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     screens: {
       'air': '1025px',
+      'customDes': {'raw': '(min-width: 1080px) and (min-height: 1920px)'},
     },
     extend: {
       backgroundImage: {

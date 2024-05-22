@@ -17,7 +17,7 @@ export default function LogoMark({ mt }: LogoMarkProps) {
     >
       <Image
         src={logoMark}
-        className={`w-[120px] z-20 fixed right-6 landscape:bottom-8  ${mt}`}
+        className={`w-[120px] customDes:w-[200px] z-20 fixed right-6 customDes:right-10 landscape:bottom-8 portrait:bottom-6  customDes:bottom-12  ${mt}`}
         alt="Logo"
       />
     </motion.div>

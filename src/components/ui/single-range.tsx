@@ -26,6 +26,7 @@ export default function SingleRange({
     number | null
   >(null);
   const [firstInput, setFirstInput] = useState<boolean>(false);
+  const [thumbActive, setThumbActive] = useState<boolean>(false);
 
   useEffect(() => {
     setValue(0);
@@ -64,6 +65,12 @@ export default function SingleRange({
     setFirstInput(false);
   }, [dataList]);
 
+  useEffect(() => {
+    if (selected) {
+      setThumbActive(true);
+    }
+  }, [selected]);
+
   return (
     <>
       <style>
@@ -92,17 +99,26 @@ export default function SingleRange({
             width: 64px !important;
             height: 64px !important;
             background-color: white !important;
+            background-color: ${
+              isCorrect === false ? "#FF2A57" : "#FFFFFF"
+            } !important;
             transition: all 0.3s ease 0s !important;
+            box-shadow: ${
+              isCorrect === true
+                ? "0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16)"
+                : "none"
+            } !important;
+            z-index: 2 !important;
           }
           
-          .MuiSlider-thumb.Mui-active {
+          ...MuiSlider-thumb.Mui-active {
             box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
           }
           
-          .MuiSlider-thumb:hover {
+          ...MuiSlider-thumb:hover {
             box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16) !important;
           }
-          
+        
           .MuiSlider-valueLabel {
             background-color: #5F98FF !important;
             font-family: SocialBold, sans-serif;
@@ -118,26 +134,27 @@ export default function SingleRange({
           
           .MuiSlider-root {
             height: 40px !important;
+            padding: 12px 0 !important;
           }
           
           .MuiSlider-markLabel {
             font-family: SocialBold, sans-serif !important;
-            font-size: 26px !important;
+            font-size: 22px !important;
             color: white !important;
             top: 90px !important;
             white-space: unset !important;
-            width: 150px !important;
+            width: 120px !important;
             text-align: center !important;
             line-height: 1.3 !important;
           }
           
           .MuiSlider-markLabel {
             font-family: SocialBold, sans-serif !important;
-            font-size: 26px !important;
+            font-size: 22px !important;
             color: white !important;
             top: 90px !important;
             white-space: unset !important;
-            width: 150px !important;
+            width: 120px !important;
             text-align: center !important;
             line-height: 1.3 !important;
           }
@@ -150,12 +167,32 @@ export default function SingleRange({
             top: 60% !important;
             background-color: white !important;
           }
+          @media screen and (min-width: 1080px) and (min-height: 1920px) {
+            .MuiSlider-root {
+              height: 50px !important;
+              padding: 12px 0 !important;
+            }
+            .MuiSlider-thumb {
+              width: 76px !important;
+              height: 76px !important;
+              
+            }
+            .MuiSlider-markLabel {
+              font-size: 32px !important;
+              width: 160px !important;
+              top: 100px !important;
+            }
+            .MuiSlider-mark {
+              height: 80px !important;
+              top: 70% !important;
+              
+            }
+          }
         `}
       </style>
       <div style={{ position: "relative" }}>
-        {" "}
         <Slider
-          className="portrait:!w-[630px] landscape:!w-[780px] landscape:air:w-[780px] m-auto portrait:flex  justify-center"
+          className="portrait:!w-[680px] landscape:!w-[780px] landscape:air:w-[780px] portrait:customDes:!w-[950px] m-auto portrait:flex  justify-center"
           aria-label="Temperature"
           value={value}
           valueLabelDisplay="auto"
@@ -198,17 +235,21 @@ export default function SingleRange({
               setSelected(marksArray[correctAnswerPosition + 1].label);
               setIsCorrect(true);
             }}
+            className=" customDes:!w-[76px] customDes:!h-[76px]"
             style={{
               position: "absolute",
               cursor: "pointer",
               left: `${marksArray[correctAnswerPosition + 1].value}%`,
               transform: "translateX(-50%)",
-              backgroundColor: isCorrect === true ? "#FFFFFF" : "#FF2A57",
+              backgroundColor: isCorrect === true ? "#FF2A57" : "#FFFFFF",
               width: "64px",
               height: "64px",
               borderRadius: "50%",
               zIndex: 1,
-              opacity: isCorrect === true ? 0.5 : 1,
+              boxShadow:
+                isCorrect === false
+                  ? "0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16)"
+                  : "none",
             }}
           ></span>
         )}

@@ -25,7 +25,7 @@ export default function ButtonAnswer({
         setIsCorrect(isCorrect);
       }}
       className={cn(
-        `w-[180px] air:w-[190px] mx-3 mt-3 border-2 border-transparent h-[180px] air:h-[190px] rounded-full flex items-center justify-center cursor-pointer bg-blueQuestions socialBold text-[27px] text-white duration-200 text-center leading-8`,
+        `w-[180px] air:w-[190px] customDes:w-[300px] mx-3 mt-3 border-2 border-transparent h-[180px] air:h-[190px] customDes:h-[300px] rounded-full flex items-center justify-center cursor-pointer bg-blueQuestions socialBold text-[27px] customDes:text-[43px] text-white duration-200 text-center leading-8 customDes:leading-[50px]`,
         {
           "bg-greenQuestions": selected !== null && correct === children,
           "border-2 border-grey-200": selected === children && correct !== children,

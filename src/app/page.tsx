@@ -20,7 +20,7 @@ export default function Welcome() {
         className="absolute top-0 right-0 w-full  landscape:hidden"
         alt="bg"
       />
-      <div className="portrait:mt-[340px]">
+      <div className="portrait:mt-[340px] portrait:customDes:mt-[600px]">
         <Content />
       </div>
     </div>

@@ -40,7 +40,7 @@ function page() {
         className="absolute top-0 right-0 w-full  landscape:hidden"
         alt="bg"
       />
-      <div className="portrait:mt-[340px]">
+      <div className="portrait:mt-[340px] portrait:customDes:mt-[600px]">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -63,10 +63,10 @@ function page() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
         >
-          <p className="text-[28px] socialBold mt-14">
+          <p className="text-[28px] customDes:text-[38px] socialBold mt-14">
             Are you getting the best at work?
           </p>
-          <p className="text-[28px] socialBook mt-2 w-[600px] leading-8">
+          <p className="text-[28px] customDes:text-[36px] socialBook mt-2 w-[600px] customDes:w-[700px] leading-8 customDes:leading-10">
             Ensuring optimal broadband speeds and connection types can
             significantly enhance a business’s operational efficiency and
             digital competitiveness.
@@ -82,14 +82,14 @@ function page() {
               href="https://www.nbnco.com.au/connect-home-or-business/check-your-address"
               target="_blank"
             >
-              <button className="socialBold text-[24px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
+              <button className="socialBold text-[24px] customDes:text-[32px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px] customDes:w-[420px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
                 Check your address
               </button>
             </Link>
 
             <p
               onClick={handleRestart}
-              className="text-[28px] socialBold ml-12 cursor-pointer active:underline duration-200"
+              className="text-[28px] customDes:text-[32px] socialBold ml-12 cursor-pointer active:underline duration-200"
             >
               Restart
             </p>

@@ -27,7 +27,7 @@ export default function Home() {
         */}
       </div>
 
-      <LogoMark mt={"portrait:bottom-[130px]"} />
+      <LogoMark mt={"portrait:bottom-[130px] portrait:customDes:bottom-12"} />
     </main>
   );
 }

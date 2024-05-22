@@ -36,33 +36,41 @@ export default function Correct({ correct, data }: CorrectProps) {
         }
       )}
     >
-      <div className="p-9 flex justify-between items-center w-full px-10">
+      <div className="p-9 flex customDes:block justify-between items-center w-full px-10 customDes:py-[140px]">
         <div>
           <p
-            className={cn(` text-[55px] text-white socialBold leading-[64px]`, {
-              "text-black": correct,
-            })}
+            className={cn(
+              ` text-[55px] customDes:text-[100px] text-white socialBold leading-[64px] customDes:text-center`,
+              {
+                "text-black": correct,
+              }
+            )}
           >
             {correct === true && data.correct.title}
             {correct === false && data.incorrect.title}
           </p>
           <p
-            className={cn(`text-center text-white socialBold text-[22px]`, {
-              "text-black": correct,
-            })}
+            className={cn(
+              `text-left text-white socialBold text-[22px] customDes:text-[33px] customDes:text-center customDes:my-6`,
+              {
+                "text-black": correct,
+              }
+            )}
           >
             {correct === true && data.correct.text}
             {correct === false && data.incorrect.text}
           </p>
         </div>
-        <Button
-          onClick={() => {
-            processAnswer();
-          }}
-          variant="white"
-        >
-          Next
-        </Button>
+        <div className=" customDes:flex justify-center ">
+          <Button
+            onClick={() => {
+              processAnswer();
+            }}
+            variant="white"
+          >
+            Next
+          </Button>
+        </div>
       </div>
     </motion.div>
   );

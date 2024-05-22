@@ -29,7 +29,7 @@ export function RangeAnswer({ data }: RangeAnswerProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <p className="socialBold text-white text-[42px] leading-10 landscape:mt-20 max-w-[600px] portrait:mt-[200px]">
+        <p className="socialBold text-white text-[42px] customDes:text-[50px] customDes:max-w-[700px] customDes:m-auto customDes:text-center leading-10 customDes:leading-[50px] landscape:mt-20 max-w-[600px] portrait:mt-[200px]">
           {data.question}
         </p>
       </motion.div>

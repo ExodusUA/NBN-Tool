@@ -22,7 +22,7 @@ export default function page() {
         <RangeAnswer data={currentQuestion} />
       )}
 
-      <LogoMark mt={"portrait:bottom-[20px]"} />
+      <LogoMark mt={"portrait:bottom-[20px] portrait:customDes:bottom-12"} />
     </main>
   );
 }
