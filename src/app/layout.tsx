@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "NBN Tool",
   description: "Description of the NBN Tool",
+  appleWebApp: {
+    statusBarStyle: 'black-translucent',
+  },
+
 };
 
 export default function RootLayout({

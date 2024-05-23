@@ -41,12 +41,13 @@ export function RangeAnswer({ data }: RangeAnswerProps) {
             selected={selected}
             setSelected={setSelected}
             isCorrect={isCorrect}
+            id={data.id}
           />
         )}
       </div>
 
       {isCorrect !== null && currentQuestion.id === data.id && (
-        <Correct correct={isCorrect} data={data.hints[0]} />
+        <Correct correct={isCorrect} data={data.hints[0]} selected={selected} />
       )}
     </div>
   );

@@ -29,7 +29,7 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
           {data.question}
         </p>
       </motion.div>
-      <div className="landscape:flex portrait:grid  justify-center mt-16 portrait:mt-6 items-center "> 
+      <div className="landscape:flex portrait:grid  justify-center mt-16 portrait:mt-6 items-center ">
         <div className="flex  justify-between landscape:mr-2 air:landscape:mr-6">
           <div className=" flex portrait:flex-wrap portrait:w-[500px] portrait:customDes:w-[800px] justify-center customDes:mt-[120px]">
             {data.answers.map((answer, index) => (
@@ -49,7 +49,7 @@ export function ChooseAnswer({ data }: ChooseAnswerProps) {
       </div>
 
       {isCorrect !== null && currentQuestion.id === data.id && (
-        <Correct correct={isCorrect} data={data.hints[0]} />
+        <Correct correct={isCorrect} data={data.hints[0]} selected={selected} />
       )}
     </div>
   );

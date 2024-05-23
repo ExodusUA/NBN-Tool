@@ -10,6 +10,7 @@ interface SingleRangeProps {
   }[];
   isCorrect: boolean | null;
   selected: string | undefined;
+  id: number;
   setSelected: (value: string | undefined) => void;
   setIsCorrect: (value: boolean | null) => void;
 }
@@ -20,6 +21,7 @@ export default function SingleRange({
   selected,
   setIsCorrect,
   isCorrect,
+  id
 }: SingleRangeProps) {
   const [value, setValue] = useState<number | number[]>(0);
   const [correctAnswerPosition, setCorrectAnswerPosition] = useState<
@@ -99,15 +101,14 @@ export default function SingleRange({
             width: 64px !important;
             height: 64px !important;
             background-color: white !important;
-            background-color: ${
-              isCorrect === false ? "#FF2A57" : "#FFFFFF"
-            } !important;
+            background-color: ${isCorrect === false && id !== 5 && id !== 6
+            ? "#FF2A57" : "#FFFFFF"
+          } !important;
             transition: all 0.3s ease 0s !important;
-            box-shadow: ${
-              isCorrect === true
-                ? "0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16)"
-                : "none"
-            } !important;
+            box-shadow: ${isCorrect === true || id === 5 || id === 6 && firstInput === true
+            ? "0px 0px 0px 6px rgba(255, 255, 255, 0.16), 0px 0px 0px 12px rgba(255, 255, 255, 0.16)"
+            : "none"
+          } !important;
             z-index: 2 !important;
           }
           
@@ -206,6 +207,7 @@ export default function SingleRange({
             setValue(value);
           }}
           onChangeCommitted={(e, value) => {
+            handleInput()
             let label = marksArray.find((mark) => mark.value === value)?.label;
             setSelected(label);
 
@@ -227,7 +229,7 @@ export default function SingleRange({
           }}
           onClick={handleInput}
         />
-        {firstInput === true && correctAnswerPosition !== null && (
+        {firstInput === true && correctAnswerPosition !== null && id !== 5 && id !== 6 && (
           <span
             onClick={(e) => {
               //set correct value
