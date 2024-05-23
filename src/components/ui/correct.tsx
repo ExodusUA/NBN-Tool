@@ -8,7 +8,7 @@ import mixpanel from "mixpanel-browser";
 
 interface CorrectProps {
   correct: boolean;
-  selected: string | null;
+  selected: string | null | undefined;
   data: Hints;
 }
 
