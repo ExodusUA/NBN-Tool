@@ -40,7 +40,7 @@ function page() {
 
       <Image
         src={bgFull}
-        className="absolute top-0 right-0 w-[340px] h-full  portrait:hidden"
+        className="absolute top-0 right-0 w-[520px] h-full  portrait:hidden z-0"
         alt="bg"
       />
       <Image
@@ -66,6 +66,7 @@ function page() {
             )}
           </p>
         </motion.div>
+        {/*
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -80,12 +81,13 @@ function page() {
             digital competitiveness.
           </p>
         </motion.div>
+        */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
         >
-          <div className="flex items-center mt-12">
+          <div className="flex items-center mt-[140px]">
             <Link
               href="https://www.nbnco.com.au/connect-home-or-business/check-your-address"
               onClick={() => {

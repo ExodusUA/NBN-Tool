@@ -10,7 +10,7 @@ export function ResultNumber() {
       initial={{ scale: 1, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className=""
+      className="z-20 absolute"
     >
       <div className="fixed portrait:right-[8px] portrait:top-[370px] landscape:right-[280px] landscape:top-[60px] w-[280px] h-[280px] bg-[#ffffff58] rounded-full flex items-center justify-center pulse2 z-20"></div>
       <div className="fixed portrait:right-[28px] portrait:top-[388px] landscape:right-[298px] landscape:top-[78px] w-[240px] h-[240px] bg-[#ffffff92] rounded-full flex items-center justify-center pulse z-20"></div>

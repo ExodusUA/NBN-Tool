@@ -4,7 +4,7 @@ const questions = [
         question: "What is the nbn network’s busiest data day of the year?",
         type: "choose",
         answers: [
-            { text: "Christmas", correct: false },
+            { text: "Christmas day", correct: false },
             { text: "AFL Grand Finals", correct: false },
             { text: "Fortnite Update", correct: true },
             { text: "Australian Open Final Match", correct: false }
@@ -25,7 +25,7 @@ const questions = [
 
     {
         id: 2,
-        question: "On average, how many devices are connected to the average household Wi–Fi ?",
+        question: "How many devices are connected to the average household WI-FI ? ",
         type: "range",
         answers: [
 
@@ -50,7 +50,7 @@ const questions = [
 
     {
         id: 3,
-        question: "What is the average fixed broadband download speed in Australian homes?",
+        question: "What is the average Fixed Line broadband download speed in Australian homes?",
         type: "range",
         answers: [
             { text: "No idea", correct: false },
@@ -100,7 +100,7 @@ const questions = [
 
     {
         id: 5,
-        question: "What is the DOWNLOAD speed in your workplace:",
+        question: "What is the top download speed available at your workplace?",
 
         type: "range",
         answers: [
@@ -126,7 +126,7 @@ const questions = [
 
     {
         id: 6,
-        question: "What is the UPLOAD speed in your workplace:",
+        question: "What upload speed is available via your nbn powered plan at your workplace?",
         type: "range",
         answers: [
             { text: "Not sure", correct: false },
