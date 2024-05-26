@@ -6,9 +6,15 @@ import LogoMark from "@/components/logo-mark";
 import { RangeAnswer } from "@/questions/range-answer";
 import progressStore from "@/stores/progressStore";
 import { ChooseAnswer } from "@/questions";
+import { useEffect } from "react";
+import mixpanel from "mixpanel-browser";
 
 export default function page() {
   const currentQuestion = progressStore((state) => state.currentQuestion);
+
+  useEffect(() => {
+    mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_TOKEN as string)
+  }, []);
 
   return (
     <main className=" p-10">

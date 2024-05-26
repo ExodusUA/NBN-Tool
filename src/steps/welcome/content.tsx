@@ -29,7 +29,7 @@ export default function Content() {
         <p className="text-[28px] customDes:text-[38px] socialBold mt-14">
           Duis aute irure dolor in
         </p>
-        <p className="text-[28px] customDes:text-[36px] socialBook mt-2 w-[600px] leading-8 customDes:leading-10">
+        <p className="text-[28px] customDes:text-[36px] socialBook mt-2 pt-[12px] w-[600px] leading-8 customDes:leading-10">
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
           officia deserunt mollit anim id est laborum
         </p>
