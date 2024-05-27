@@ -5,7 +5,7 @@ const questions = [
         type: "choose",
         answers: [
             { text: "Christmas day", correct: false },
-            { text: "AFL Grand Finals", correct: false },
+            { text: "AFL Grand Final", correct: false },
             { text: "Fortnite Update", correct: true },
             { text: "Australian Open Final Match", correct: false }
         ],
@@ -105,20 +105,20 @@ const questions = [
         type: "range",
         answers: [
             { text: "Not sure", correct: false },
-            { text: "Below 100Mbps", correct: false },
+            { text: "Below 100Mbps", correct: true },
             { text: "Above 100Mbps", correct: true },
-            { text: "Above 500Mbps", correct: false },
-            { text: "Above 1Gbps", correct: false }
+            { text: "Above 500Mbps", correct: true },
+            { text: "Above 1Gbps", correct: true }
         ],
         hints: [
             {
                 correct: {
-                    title: 'fast!',
-                    text: 'Your download speed at work is as fast as it gets'
+                    title: 'Thanks for your response',
+                    text: 'Talk to the nbn team about what speeds are possible in your area'
                 },
                 incorrect: {
-                    title: 'slow!',
-                    text: 'Your download speed at work is 20 times less than the average'
+                    title: 'Thanks for your response',
+                    text: 'Talk to the nbn team about what speeds are possible in your area'
                 },
             }
         ]
@@ -130,20 +130,20 @@ const questions = [
         type: "range",
         answers: [
             { text: "Not sure", correct: false },
-            { text: "Below 50Mbps", correct: false },
+            { text: "Below 50Mbps", correct: true },
             { text: "Above 50Mbps", correct: true },
-            { text: "Above 100Mbps", correct: false },
-            { text: "Above 500Mbps", correct: false }
+            { text: "Above 100Mbps", correct: true },
+            { text: "Above 500Mbps", correct: true }
         ],
         hints: [
             {
                 correct: {
-                    title: 'fast!',
-                    text: 'Your download speed at work is as fast as it gets'
+                    title: 'Thanks for your response',
+                    text: 'Talk to the nbn team about what speeds are possible in your area'
                 },
                 incorrect: {
-                    title: 'slow!',
-                    text: 'Your download speed at work is 20 times less than the average'
+                    title: 'Thanks for your response',
+                    text: 'Talk to the nbn team about what speeds are possible in your area'
                 },
             }
         ]

@@ -100,6 +100,19 @@ function page() {
               </button>
             </Link>
 
+          <Link
+              href="https://cloud.mc.nbnco.com.au/CBSmallBizWeek"
+              onClick={() => {
+                mixpanel.track("Add my details");
+              }}
+              target="_blank"
+            >
+              <button className="socialBold text-[24px] customDes:text-[32px] text-white checkAdressBtn bg-blue ml-12 rounded-[72px] py-3 w-[360px] customDes:w-[420px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
+                Register for nbn updates
+              </button>
+
+              
+            </Link>
             <p
               onClick={handleRestart}
               className="text-[28px] customDes:text-[32px] socialBold ml-12 cursor-pointer active:underline duration-200"
@@ -107,6 +120,7 @@ function page() {
               Restart
             </p>
           </div>
+          
         </motion.div>
       </div>
       <LogoMark mt={"portrait:bottom-[30px]"} />
