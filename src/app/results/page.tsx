@@ -40,7 +40,7 @@ function page() {
 
       <Image
         src={bgFull}
-        className="absolute top-0 right-0 w-[520px] h-full  portrait:hidden z-0"
+        className="absolute top-0 right-0 w-[520px] xl:w-[750px] h-full  portrait:hidden z-0"
         alt="bg"
       />
       <Image

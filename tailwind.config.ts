@@ -11,6 +11,8 @@ const config: Config = {
     screens: {
       'air': '1025px',
       'customDes': {'raw': '(min-width: 1080px) and (min-height: 1920px)'},
+      'xl': '1280px',
+      '2xl': '1536px',
     },
     extend: {
       backgroundImage: {
