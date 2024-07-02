@@ -4,7 +4,6 @@ import { cn } from "../lib/utils";
 import { Button } from "../lib";
 import progressStore, { Hints } from "@/stores/progressStore";
 import { useRouter } from "next/navigation";
-import mixpanel from "mixpanel-browser";
 
 interface CorrectProps {
   correct: boolean;
@@ -19,11 +18,6 @@ export default function Correct({ correct, data, selected }: CorrectProps) {
   const currentQuestion = progressStore((state) => state.currentQuestion);
 
   const processAnswer = () => {
-    mixpanel.track(`Question ${currentQuestion.id}`, {
-      correct: correct,
-      answer: selected,
-    });
-
     if (currentQuestion.id === 6) return navigate.push("/results");
     nextQuestion(
       currentQuestion.id === 5 || currentQuestion.id === 6 ? true : correct

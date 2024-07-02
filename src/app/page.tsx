@@ -7,14 +7,8 @@ import bgPortrait from "@/images/homepage/bgPortrait.png";
 import Logo from "@/components/logotype";
 import Content from "@/steps/welcome/content";
 import { useEffect } from "react";
-import mixpanel from "mixpanel-browser";
 
 export default function Welcome() {
-
-  useEffect(() => {
-    mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_TOKEN as string)
-    mixpanel.track("Session started");
-  }, []);
 
   return (
     <div className="p-10">

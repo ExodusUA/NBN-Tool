@@ -1,17 +1,15 @@
 "use client";
 
-import React, { useEffect } from "react";
 import Image from "next/image";
 import bgFull from "../../images/result/bgFull.png";
 import bgPortrait from "../../images/result/bgPortrait.png";
 import Logo from "@/components/logotype";
 import { ResultNumber } from "@/components/ui/result-number";
 import LogoMark from "@/components/logo-mark";
-import { mix, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import progressStore from "@/stores/progressStore";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import mixpanel from "mixpanel-browser";
 
 function page() {
   const navigate = useRouter();
@@ -20,13 +18,6 @@ function page() {
   const answers = progressStore((state) => state.answers);
 
   const wellDone = answers.filter((answer) => answer === true).length > 3;
-
-  useEffect(() => {
-    mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_TOKEN as string);
-    mixpanel.track("Session ended", {
-      score: answers.filter((answer) => answer === true).length,
-    });
-  }, []);
 
   const handleRestart = () => {
     restart();
@@ -90,9 +81,7 @@ function page() {
           <div className="flex items-center mt-[140px]">
             <Link
               href="https://www.nbnco.com.au/connect-home-or-business/check-your-address"
-              onClick={() => {
-                mixpanel.track("Look up my address click");
-              }}
+              
               target="_blank"
             >
               <button className="socialBold text-[24px] customDes:text-[32px] text-white checkAdressBtn bg-blue rounded-[72px] py-3 w-[360px] customDes:w-[420px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
@@ -102,9 +91,7 @@ function page() {
 
           <Link
               href="https://cloud.mc.nbnco.com.au/CBSmallBizWeek"
-              onClick={() => {
-                mixpanel.track("Add my details");
-              }}
+              
               target="_blank"
             >
               <button className="socialBold text-[24px] customDes:text-[32px] text-white checkAdressBtn bg-blue ml-12 rounded-[72px] py-3 w-[360px] customDes:w-[420px]  text-center  active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-100 duration-200 outline-none">
